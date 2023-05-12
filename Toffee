@@ -63,4 +63,49 @@ class Customer {
     public int getLoyaltyPoints() {
         return loyaltyPoints;
     }
+    public void setLoyaltyPoints(int loyaltyPoints) {
+        this.loyaltyPoints = loyaltyPoints;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void addToCart(Item item) {
+
+        cart.addItem(item);
+    }
+
+    public void removeFromCart(Item item) {
+        cart.removeItem(item);
+    }
+
+    public List<Order> getOrderHistory() {
+        return orderHistory;
+    }
+
+    public void addOrderToHistory(Order order) {
+        orderHistory.add(order);
+    }
+}
+
+class Admin {
+    // Add fields and methods specific to the Admin class
+}
+
+class Cart {
+    private List<Item> items;
+
+    // Constructor
+    public Cart() {
+        items = new ArrayList<>();
+    }
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    public void removeItem(Item item) {
+        items.remove(item);
+    }
 
