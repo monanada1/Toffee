@@ -108,4 +108,74 @@ class Cart {
     public void removeItem(Item item) {
         items.remove(item);
     }
+     public double calculateTotalCost() {
+        double totalCost = 0.0;
+        for (Item item : items) {
+            totalCost += item.getPrice();
+        }
+        return totalCost;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+}
+
+class Catalog {
+    private List<Item> items;
+
+    // Constructor
+    public Catalog() {
+        items = new ArrayList<>();
+    }
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    public void removeItem(Item item) {
+        items.remove(item);
+    }
+
+    // Add other methods as needed
+}
+
+class Order {
+    private Date date;
+    private double totalPrice;
+    private String shippingAddress;
+    private List<Item> items;
+    private Payment payment;
+
+    // Constructor
+    public Order(double totalPrice, String shippingAddress, List<Item> items, Payment payment) {
+        this.date = new Date();
+        this.totalPrice = totalPrice;
+        this.shippingAddress = shippingAddress;
+        this.items = items;
+        this.payment = payment;
+    }
+
+    // Getters and setters
+    public Date getDate() {
+        return date;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+}
+
 
