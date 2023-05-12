@@ -235,4 +235,15 @@ class Payment {
         this.paymentMethod = paymentMethod;
     }
 }
-
+public class Main {
+    public static void main(String[] args) {
+        // Create a new customer
+        Customer customer = new Customer("John Doe", "123 Main St");
+        // Create a new item
+        Item item = new Item("New item", 9.99);
+        // Add the item to the customer's cart
+        customer.addToCart(item);
+        // Create a new order
+        Order order = new Order(customer.getCart().calculateTotalCost(), customer.getAddress(), customer.getCart().getItems(), new Payment(customer.getCart().calculateTotalCost(), "Credit card"));
+        // Add the order to the customer's order history
+        customer.addOrderToHistory(order);
