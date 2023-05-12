@@ -247,3 +247,28 @@ public class Main {
         Order order = new Order(customer.getCart().calculateTotalCost(), customer.getAddress(), customer.getCart().getItems(), new Payment(customer.getCart().calculateTotalCost(), "Credit card"));
         // Add the order to the customer's order history
         customer.addOrderToHistory(order);
+        string num="0123456789";
+        int len=6;
+        char[]otp=new char[len];
+        Random r=new Random();
+        for(int i=0;i<len;i++){
+            otp[i]=num.charAt(r.nextInt(num length()));
+        }
+        System.out.println("Otp:"new string(otp));
+        // Print the customer's order history
+        System.out.println("Customer's order history:");
+        for (Order o : customer.getOrderHistory()) {
+            System.out.println("Order date: " + o.getDate());
+            System.out.println("Order total price: " + o.getTotalPrice());
+            System.out.println("Order shipping address: " + o.getShippingAddress());
+            System.out.println("Order items: ");
+            for (Item i : o.getItems()) {
+                System.out.println("Item name: " + i.getName());
+                System.out.println("Item price: " + i.getPrice());
+            }
+            System.out.println("Order payment: ");
+            System.out.println("Payment amount: " + o.getPayment().getAmount());
+            System.out.println("Payment method: " + o.getPayment().getPaymentMethod());
+        }
+    }
+}
