@@ -18,3 +18,49 @@ class User {
     public void setEmail(String email) {
         this.email = email;
     }
+     public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
+
+class Customer {
+    private String name;
+    private String address;
+    private int loyaltyPoints;
+    private Cart cart;
+    private List<Order> orderHistory;
+
+    // Constructor
+    public Customer(String name, String address) {
+        this.name = name;
+        this.address = address;
+        this.loyaltyPoints = 0;
+        this.cart = new Cart();
+        this.orderHistory = new ArrayList<>();
+    }
+
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getLoyaltyPoints() {
+        return loyaltyPoints;
+    }
+
